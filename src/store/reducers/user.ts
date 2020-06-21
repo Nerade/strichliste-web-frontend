@@ -15,6 +15,7 @@ export interface User {
   isActive: boolean;
   isDisabled?: boolean;
   email?: string | null;
+  tagId?: string | null;
   balance: number;
   created: string;
   updated?: string;
@@ -123,6 +124,7 @@ export async function startCreatingUser(
 export interface UserUpdateParams {
   name: string;
   email?: string;
+  tagId?: string;
   isDisabled: boolean;
 }
 export async function startUpdateUser(

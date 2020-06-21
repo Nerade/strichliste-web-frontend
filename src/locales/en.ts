@@ -77,6 +77,7 @@ export const en = {
   USER_EDIT_HEADLINE: 'Edit user',
   USER_EDIT_TRIGGER: 'save changes',
   USER_EDIT_NAME_LABEL: 'name',
+  USER_EDIT_TAGID_LABEL: 'tag-id',
   USER_EDIT_MAIL_LABEL: 'e-mail',
   USER_EDIT_ACTIVE_LABEL: 'User is inactive',
   USER_EDIT_ACTIVE_WARNING: 'you can not enable a disabled user. So take care',

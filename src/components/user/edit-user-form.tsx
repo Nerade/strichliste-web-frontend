@@ -21,6 +21,7 @@ export const UserEditForm = (props: Props) => {
   const intl = useIntl();
   const [name, setName] = React.useState(''),
     [email, setEmail] = React.useState(''),
+    [tagId, setTagId] = React.useState(''),
     [isDisabled, setDisabled] = React.useState(false),
     user = useUser(props.userId),
     dispatch = useDispatch(),
@@ -31,6 +32,7 @@ export const UserEditForm = (props: Props) => {
         name,
         email,
         isDisabled,
+        tagId,
       });
 
       if (user && user.isDisabled) {
@@ -46,6 +48,7 @@ export const UserEditForm = (props: Props) => {
     if (user) {
       setName(user.name);
       setEmail(user.email || '');
+      setTagId(user.tagId || '');
       setDisabled(user.isDisabled || false);
     }
     // eslint-disable-next-line
@@ -78,6 +81,21 @@ export const UserEditForm = (props: Props) => {
               value={email || ''}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
+            />
+          )}
+        />
+      </div>
+      <div style={formStyle}>
+        <FormattedMessage
+          id="USER_EDIT_TAGID_LABEL"
+          children={(text) => (
+            <Input
+              placeholder={text as string}
+              value={tagId || ''}
+              onChange={(e) => setTagId(e.target.value)}
+              minLength={6}
+              maxLength={8}
+              type="text"
             />
           )}
         />
